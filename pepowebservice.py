@@ -11,7 +11,7 @@ def hola_html():
             <title>Pepo Web Service</title>
             <style>
                 body {
-                    font-family: Arial, sans-serif;
+                    font-family: Arial, Helvetica, sans-serif;
                     background-color: #ffffff; /* Fondo blanco */
                     display: flex;
                     justify-content: center;
@@ -21,14 +21,14 @@ def hola_html():
                     text-align: center;
                 }
                 h1 {
-                    color: #333333;
-                    font-size: 36px;
+                    color: #8e44ad;
+                    font-size: 48px;
                     margin: 0;
                 }
                 p {
-                    color: #555555;
-                    font-size: 24px;
-                    margin: 10px 0 0 0;
+                    color: #c39bd3;
+                    font-size: 36px;
+                    margin-top: 20px;
                 }
             </style>
         </head>
