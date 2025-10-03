@@ -52,7 +52,7 @@ def hola_html():
             <div class="container">
                 <h1>Bienvenido a Pepo Web Service</h1>
                 <form action="/saludo" method="post">
-                    <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
                     <br>
                     <button type="submit">Enviar</button>
                 </form>
@@ -71,7 +71,7 @@ def saludo():
             <title>Saludo</title>
         </head>
         <body style="font-family: Arial; text-align: center; margin-top: 50px;">
-            <h1>¡Hola, {nombre}! 🎉</h1>
+            <h1>¡Hola, {nombre}!</h1>
             <p>Bienvenido a Pepo Web Service.</p>
             <a href="/">Volver al inicio</a>
         </body>
