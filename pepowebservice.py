@@ -3,51 +3,26 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route("/")
-def hola_html():
-    return """
+@app.route("/saludo", methods=["POST"])
+def saludo_html():
+    nombre = request.form.get("nombre", "Usuario")
+    return f"""
     <html>
-        <head>
-            <title>Pepo Web Service</title>
-            <style>
-                body {
-                    font-family: Arial, Helvetica, sans-serif;
-                    background-color: #ffffff; /* Fondo blanco */
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    margin: 0;
-                    text-align: center;
-                }
-                h1 {
-                    color: #8e44ad;
-                    font-size: 48px;
-                    margin: 0;
-                }
-                p {
-                    color: #c39bd3;
-                    font-size: 36px;
-                    margin-top: 20px;
-                }
-            </style>
-        </head>
-        <body>
-            <div>
-                <h1>Bienvenidos a Pepo Web Service</h1>
-                <p>Ana Karem Crespo López - 22031437</p>
-            </div>
+        <head><title>Saludo</title></head>
+        <body style="text-align:center; margin-top:50px; font-family:Arial;">
+            <h1>¡Hola, {nombre}! 🎉</h1>
+            <p>Bienvenido a Pepo Web Service.</p>
+            <a href="/">Volver al inicio</a>
         </body>
     </html>
     """
 
-@app.route("/json")
-def hola_json():
-    return jsonify({
-        "mensaje": "Bienvenidos a Pepo Web Service",
-        "nombre": "Ana Karem Crespo López - 22031437"
-    })
+@app.route("/saludo_json", methods=["POST"])
+def saludo_json():
+    def saludo_json():
+    data = request.get_json()  # aquí recibe un JSON {"nombre": "Pepo"}
+    nombre = data.get("nombre", "Usuario") if data else "Usuario"
+    return jsonify({"mensaje": f"¡Hola, {nombre}! Bienvenido a Pepo Web Service 🎉"})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
