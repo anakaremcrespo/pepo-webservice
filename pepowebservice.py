@@ -57,10 +57,10 @@ def index():
         </head>
         <body>
             <div class="card">
-                <h1>Bienvenido</h1>
-                <p>Introduce tu nombre para recibir un saludo personalizado</p>
+                <h1>Bienvenido a Pepo Web Service</h1>
+                <p>Ingresa tu nombre para ser parte de Macrocom</p>
                 <form action="/saludo" method="post">
-                    <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
                     <br>
                     <button type="submit">Enviar</button>
                 </form>
@@ -116,7 +116,7 @@ def saludo_html():
             <div class="card">
                 <h1>¡Hola, {nombre}!</h1>
                 <p>Bienvenido a Pepo Web Service.</p>
-                <a href="/">Volver al inicio</a>
+                <a href="/">Regresar a la página de inicio</a>
             </div>
         </body>
     </html>
@@ -127,7 +127,7 @@ def saludo_html():
 def saludo_json():
     data = request.get_json()
     nombre = data.get("nombre", "Usuario") if data else "Usuario"
-    return jsonify({"mensaje": f"¡Hola, {nombre}! Bienvenido a Pepo Web Service"})
+    return jsonify({"mensaje": f"¡Hola, {nombre}! Bienvenido a Pepo Web Service, ya eres parte de Macrocom"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
