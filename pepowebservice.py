@@ -73,7 +73,7 @@ def saludo():
         <body style="font-family: Arial; text-align: center; margin-top: 50px;">
             <h1>¡Hola, {nombre}!</h1>
             <p>Bienvenido a Pepo Web Service.</p>
-            <a href="/">Volver al inicio</a>
+            <a href="/">VolverRegresar a pagina de inicio</a>
         </body>
     </html>
     """
